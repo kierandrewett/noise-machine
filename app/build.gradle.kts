@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.noisemachine"
+    namespace = "dev.drewett.noisemachine"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.noisemachine"
+        applicationId = "dev.drewett.noisemachine"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

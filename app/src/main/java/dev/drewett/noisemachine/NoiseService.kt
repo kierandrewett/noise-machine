@@ -1,4 +1,4 @@
-package com.noisemachine
+package dev.drewett.noisemachine
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -15,18 +15,18 @@ import android.os.Build
 import android.os.IBinder
 import android.os.PowerManager
 import android.util.Log
-import com.noisemachine.audio.BrownNoiseVoice
-import com.noisemachine.audio.ClockTickVoice
-import com.noisemachine.audio.FileSource
-import com.noisemachine.audio.FileVoice
-import com.noisemachine.audio.PinkNoiseVoice
-import com.noisemachine.audio.ProceduralMixer
-import com.noisemachine.audio.ProceduralVoice
-import com.noisemachine.audio.SoundCatalog
-import com.noisemachine.audio.WhiteNoiseVoice
-import com.noisemachine.net.WebServer
-import com.noisemachine.state.ScheduleManager
-import com.noisemachine.state.Settings
+import dev.drewett.noisemachine.audio.BrownNoiseVoice
+import dev.drewett.noisemachine.audio.ClockTickVoice
+import dev.drewett.noisemachine.audio.FileSource
+import dev.drewett.noisemachine.audio.FileVoice
+import dev.drewett.noisemachine.audio.PinkNoiseVoice
+import dev.drewett.noisemachine.audio.ProceduralMixer
+import dev.drewett.noisemachine.audio.ProceduralVoice
+import dev.drewett.noisemachine.audio.SoundCatalog
+import dev.drewett.noisemachine.audio.WhiteNoiseVoice
+import dev.drewett.noisemachine.net.WebServer
+import dev.drewett.noisemachine.state.ScheduleManager
+import dev.drewett.noisemachine.state.Settings
 import java.util.concurrent.ConcurrentHashMap
 
 class NoiseService : Service() {
@@ -397,9 +397,9 @@ class NoiseService : Service() {
         private const val CHANNEL_ID = "noise_machine_playback"
         private const val NOTIFICATION_ID = 1729
 
-        const val ACTION_FIRE_SCHEDULE = "com.noisemachine.action.FIRE_SCHEDULE"
-        const val ACTION_AUTO_STOP = "com.noisemachine.action.AUTO_STOP"
-        const val ACTION_REQUEST_FOCUS = "com.noisemachine.action.REQUEST_FOCUS"
+        const val ACTION_FIRE_SCHEDULE = "dev.drewett.noisemachine.action.FIRE_SCHEDULE"
+        const val ACTION_AUTO_STOP = "dev.drewett.noisemachine.action.AUTO_STOP"
+        const val ACTION_REQUEST_FOCUS = "dev.drewett.noisemachine.action.REQUEST_FOCUS"
         const val EXTRA_ENTRY_ID = "entry_id"
 
         @Volatile private var instance: NoiseService? = null

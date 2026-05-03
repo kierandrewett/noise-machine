@@ -1,4 +1,4 @@
-package com.noisemachine.state
+package dev.drewett.noisemachine.state
 
 import android.content.Context
 import org.json.JSONArray

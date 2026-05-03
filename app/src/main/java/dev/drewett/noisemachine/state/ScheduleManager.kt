@@ -1,4 +1,4 @@
-package com.noisemachine.state
+package dev.drewett.noisemachine.state
 
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -6,7 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.util.Log
-import com.noisemachine.ScheduleReceiver
+import dev.drewett.noisemachine.ScheduleReceiver
 import java.util.Calendar
 
 /**
@@ -80,7 +80,7 @@ object ScheduleManager {
         createIfMissing: Boolean = true
     ): PendingIntent? {
         val intent = Intent(ctx, ScheduleReceiver::class.java).apply {
-            action = if (autoStop) "com.noisemachine.AUTO_STOP" else "com.noisemachine.FIRE"
+            action = if (autoStop) "dev.drewett.noisemachine.AUTO_STOP" else "dev.drewett.noisemachine.FIRE"
             putExtra(EXTRA_ENTRY_ID, entryId)
             putExtra(EXTRA_AUTO_STOP, autoStop)
         }

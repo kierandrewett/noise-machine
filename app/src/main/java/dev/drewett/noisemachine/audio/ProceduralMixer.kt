@@ -1,4 +1,4 @@
-package com.noisemachine.audio
+package dev.drewett.noisemachine.audio
 
 import android.media.AudioAttributes
 import android.media.AudioFormat
