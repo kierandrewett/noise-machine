@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<title>Noise Machine</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="dot" id="status-dot"></span>
+    <h1>Noise Machine</h1>
+  </div>
+  <div class="topbar-right">
+    <span class="next-fire" id="next-fire"></span>
+    <button class="ghost" id="btn-pause">Pause</button>
+    <button class="danger" id="btn-stop">Stop all</button>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="pad">Launchpad</button>
+  <button class="tab" data-tab="scenes">Scenes</button>
+  <button class="tab" data-tab="schedule">Schedule</button>
+  <button class="tab" data-tab="library">Library</button>
+  <button class="tab" data-tab="settings">Settings</button>
+</nav>
+
+<main>
+  <section class="pane active" id="pane-pad">
+    <div class="master">
+      <label>Master volume <span id="master-readout">0%</span></label>
+      <input type="range" id="master-volume" min="0" max="200" step="1" value="60">
+    </div>
+    <div id="pad-grid" class="pad-grid"></div>
+  </section>
+
+  <section class="pane" id="pane-scenes">
+    <div class="row gap">
+      <input type="text" id="scene-name" placeholder="Scene name (e.g. Sleep)">
+      <button id="btn-save-scene">Save current as scene</button>
+    </div>
+    <div id="scene-list" class="scene-list"></div>
+  </section>
+
+  <section class="pane" id="pane-schedule">
+    <div class="schedule-form">
+      <h3>New / edit schedule</h3>
+      <input type="hidden" id="sched-id">
+      <div class="row gap wrap">
+        <label>Time
+          <input type="time" id="sched-time" value="22:00">
+        </label>
+        <label>Action
+          <select id="sched-action">
+            <option value="ACTIVATE_SCENE">Start scene</option>
+            <option value="STOP">Stop all</option>
+          </select>
+        </label>
+        <label>Scene
+          <select id="sched-scene"></select>
+        </label>
+        <label>Auto-stop after (min)
+          <input type="number" id="sched-duration" min="0" placeholder="never">
+        </label>
+        <label>Enabled
+          <input type="checkbox" id="sched-enabled" checked>
+        </label>
+      </div>
+      <div class="dow">
+        <button data-dow="1">Mon</button>
+        <button data-dow="2">Tue</button>
+        <button data-dow="3">Wed</button>
+        <button data-dow="4">Thu</button>
+        <button data-dow="5">Fri</button>
+        <button data-dow="6">Sat</button>
+        <button data-dow="7">Sun</button>
+        <small class="hint">no days = every day</small>
+      </div>
+      <div class="row gap">
+        <button id="btn-save-schedule">Save schedule</button>
+        <button id="btn-clear-schedule" class="ghost">Clear form</button>
+      </div>
+    </div>
+    <div id="schedule-list" class="schedule-list"></div>
+  </section>
+
+  <section class="pane" id="pane-library">
+    <div class="row gap">
+      <h3>Custom uploads</h3>
+      <label class="upload-btn">
+        <input type="file" id="upload-input" accept="audio/*">
+        <span>Upload audio file</span>
+      </label>
+    </div>
+    <div id="library-list"></div>
+  </section>
+
+  <section class="pane" id="pane-settings">
+    <div class="settings">
+      <label>Web port
+        <input type="number" id="set-port" min="1024" max="65535">
+      </label>
+      <label>System volume target (% of music stream max) <span id="sysvol-readout"></span>
+        <input type="range" id="set-sysvol" min="0" max="100" step="1">
+      </label>
+      <label class="check"><input type="checkbox" id="set-dnd"> Mute notifications while playing (DND)</label>
+      <label class="check"><input type="checkbox" id="set-alarms-through-dnd"> Allow alarms through DND</label>
+      <label class="check"><input type="checkbox" id="set-autostart"> Auto-start on boot</label>
+      <label class="check"><input type="checkbox" id="set-keep-screen"> Keep screen on (in-app activity)</label>
+      <div id="permission-warnings" class="permission-warnings"></div>
+      <p class="muted">Settings are saved automatically. Changing the port restarts the web server.</p>
+    </div>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
