@@ -1,4 +1,4 @@
-package com.noisemachine
+package dev.drewett.noisemachine
 
 import android.content.Context
 import android.content.Intent
@@ -12,8 +12,8 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import com.noisemachine.databinding.ActivityMainBinding
-import com.noisemachine.state.Settings
+import dev.drewett.noisemachine.databinding.ActivityMainBinding
+import dev.drewett.noisemachine.state.Settings
 
 class MainActivity : AppCompatActivity() {
 

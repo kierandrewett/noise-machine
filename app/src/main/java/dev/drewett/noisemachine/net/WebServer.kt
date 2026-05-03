@@ -1,11 +1,11 @@
-package com.noisemachine.net
+package dev.drewett.noisemachine.net
 
 import android.content.Context
 import android.util.Log
-import com.noisemachine.NoiseService
-import com.noisemachine.audio.SoundCatalog
-import com.noisemachine.state.ScheduleManager
-import com.noisemachine.state.Settings
+import dev.drewett.noisemachine.NoiseService
+import dev.drewett.noisemachine.audio.SoundCatalog
+import dev.drewett.noisemachine.state.ScheduleManager
+import dev.drewett.noisemachine.state.Settings
 import fi.iki.elonen.NanoHTTPD
 import org.json.JSONArray
 import org.json.JSONObject

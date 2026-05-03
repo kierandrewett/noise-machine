@@ -1,10 +1,10 @@
-package com.noisemachine
+package dev.drewett.noisemachine
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.noisemachine.state.ScheduleManager
-import com.noisemachine.state.Settings
+import dev.drewett.noisemachine.state.ScheduleManager
+import dev.drewett.noisemachine.state.Settings
 
 class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {

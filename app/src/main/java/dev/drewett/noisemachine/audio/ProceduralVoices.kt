@@ -1,4 +1,4 @@
-package com.noisemachine.audio
+package dev.drewett.noisemachine.audio
 
 import kotlin.math.PI
 import kotlin.math.exp
