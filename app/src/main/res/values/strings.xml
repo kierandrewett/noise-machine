@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Noise Machine</string>
+    <string name="notification_channel_name">Playback</string>
+    <string name="notification_channel_desc">Persistent notification while the noise machine service is running.</string>
+    <string name="notification_running">Noise Machine running</string>
+    <string name="notification_idle">Idle - tap to open controls</string>
+</resources>
