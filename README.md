@@ -66,6 +66,35 @@ storm.ogg forest.ogg stream.ogg cafe.ogg ambient.ogg
 Anything missing simply shows up as a disabled "missing audio file" tile.
 You can also upload arbitrary audio files at runtime in the **Library** tab.
 
+### Quick-fetch script
+
+`tools/fetch-sounds.sh` will pull the rain loop from Pixabay and an ambient
+track from YouTube straight into `app/src/main/assets/sounds/`. Requires
+`yt-dlp` and `ffmpeg` on your machine.
+
+```bash
+# defaults: Pixabay "Calming Rain Loop" + Scott Buckley "The Long Dark" (CC-BY 4.0)
+./tools/fetch-sounds.sh
+
+# override either URL with anything yt-dlp can extract
+./tools/fetch-sounds.sh \
+  --rain    "https://pixabay.com/sound-effects/nature-calming-rain-loop-398653/" \
+  --ambient "https://www.youtube.com/watch?v=<VIDEO_ID>"
+```
+
+Always check the source's license before bundling. Pixabay sound effects
+are free with no attribution; CC-BY tracks (Scott Buckley, Kevin MacLeod,
+etc.) require crediting the creator somewhere user-visible. Don't bundle
+anything from a YouTube channel that hasn't explicitly granted download
+permission — many ambient channels are full copyrighted releases despite
+the "no copyright" titles. Safe sources:
+
+- [Pixabay sound effects](https://pixabay.com/sound-effects/) — CC0-equivalent
+- [Scott Buckley](https://www.scottbuckley.com.au/library/) — CC-BY 4.0
+- [Kevin MacLeod / Incompetech](https://incompetech.com/music/royalty-free/) — CC-BY 4.0
+- [Freesound.org](https://freesound.org) — mix; check each file
+- [Free Music Archive](https://freemusicarchive.org/) — mix; check each file
+
 ## Installing & permissions
 
 1. Install the APK (`adb install app/build/outputs/apk/debug/app-debug.apk`).
